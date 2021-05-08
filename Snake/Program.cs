@@ -6,7 +6,13 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Point point1 = new Point()
+            {
+                x = 5,
+                y = 5,
+                sym = '*'
+            };
+            point1.Drow();
         }
     }
 }
