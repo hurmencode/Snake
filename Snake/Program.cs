@@ -6,13 +6,11 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point point1 = new Point()
-            {
-                x = 5,
-                y = 5,
-                sym = '*'
-            };
-            point1.Drow();
+            HorizontLine line = new HorizontLine(1, 9, 1, '*');
+            line.Drow();
+
+            VertLine vertLine = new VertLine(1, 5, 1, '*');
+            vertLine.Drow();
         }
     }
 }
