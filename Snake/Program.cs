@@ -20,6 +20,10 @@ namespace Snake
             vertLine.Drow();
             vertLine1.Drow();
 
+            Point p = new Point(5, 4, '*');
+            Snake snake = new Snake(p, 5, Direction.Right);
+            snake.Drow();
+
             Console.ReadKey();
         }
     }
