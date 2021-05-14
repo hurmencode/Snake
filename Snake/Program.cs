@@ -48,7 +48,6 @@ namespace Snake
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.Controll(key.Key);
                 }
-                snake.Move();
             }
 
             //Console.ReadKey();
