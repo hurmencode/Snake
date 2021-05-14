@@ -11,15 +11,8 @@ namespace Snake
             Console.SetBufferSize(80, 25);
             Console.SetWindowSize(80, 25);
 
-            HorizontLine line = new HorizontLine(0, 78, 0, '+');
-            HorizontLine line1 = new HorizontLine(0, 78, 24, '+');
-            VertLine vertLine = new VertLine(0, 24, 0, '+');
-            VertLine vertLine1 = new VertLine(0, 24, 78, '+');
-
-            line.Drow();
-            line1.Drow();
-            vertLine.Drow();
-            vertLine1.Drow();
+            Wall walls = new Wall(80, 25);
+            walls.Drow();
 
             Point p = new Point(5, 4, '*');
             Snake snake = new Snake(p, 5, Direction.Right);
@@ -31,6 +24,10 @@ namespace Snake
 
             while (true)
             {
+                if (walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
                 if (snake.Eat(food))
                 {
                     food = foodCreate.CraeteFood();
@@ -50,7 +47,9 @@ namespace Snake
                 }
             }
 
-            //Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("Конец игры!!!!\nНажмите любую клавишу");
+            Console.ReadKey();
         }
     }
 }
